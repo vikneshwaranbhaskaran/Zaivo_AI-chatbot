@@ -15,6 +15,7 @@ import Navbar from './Components/Navbar';
 import CustomCursor from './Components/CustomCursor';
 import SplashScreen from './Components/SplashScreen';
 import ScrollToTop from './Components/ScrollToTop';
+import Chatbot from './Components/Chatbot';
 
 
 const PageLoader = () => (
@@ -52,6 +53,7 @@ function App() {
             <Route path="*" element={<Home />} />
           </Routes>
         </Suspense>
+        <Chatbot />
       </Router>
     </>
   );
