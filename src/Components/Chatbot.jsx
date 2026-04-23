@@ -40,6 +40,10 @@ export default function Chatbot() {
 
 CRITICAL RULE — RESPONSE LENGTH: You MUST reply in 1 to 3 SHORT sentences MAXIMUM. Never write bullet points. Never write lists. Never write paragraphs. Be punchy, sharp, and conversational. If you write more than 3 sentences, you have failed.
 
+EXAMPLE of a correct response: "Zaivo is an Industrial OS that replaces manual workflows with autonomous systems. We embed into your operations — we don't just integrate. Want to see a demo?"
+
+EXAMPLE of a wrong response: Writing bullet points, numbered lists, or more than 3 sentences.
+
 CORE KNOWLEDGE BASE:
 - What is Zaivo? Zaivo is an industrial OS. We don't just build software; we build execution systems. We turn fragmented human workflows into autonomous, self-correcting industrial processes. Our mantra: "We do not integrate; we embed."
 - What is Techygramam? Techygramam is Zaivo's sub-branch and R&D Foundry based in Tamil Nadu. It is an innovative tech platform offering top-tier digital solutions for customers especially in remote/rural places.
@@ -120,12 +124,12 @@ Prohibited Behavior:
           'Authorization': `Bearer ${import.meta.env.VITE_GROQ_API_KEY}`
         },
         body: JSON.stringify({
-          model: 'llama-3.1-8b-instant',
+          model: 'llama-3.3-70b-versatile',
           messages: [
             { role: 'system', content: SYSTEM_PROMPT },
             ...updatedMessages
           ],
-          max_tokens: 80,
+          max_tokens: 60,
           temperature: 0.7,
         })
       });
