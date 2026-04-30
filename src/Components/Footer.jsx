@@ -162,39 +162,7 @@ const Footer = () => {
                 <Link href="#" isExternal target="_blank" rel="noopener noreferrer" color="gray.500" fontSize="sm" fontWeight="600" _hover={{ color: "cyan.400" }} display="flex" alignItems="center" gap={2}>
                   <Icon as={FiInstagram} /> Instagram
                 </Link>
-                <Box pt={2} w="full">
-                  <Link 
-                    href="#" 
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    _hover={{ textDecoration: 'none' }}
-                  >
-                    <MotionBox
-                      px={4}
-                      py={2}
-                      bg="transparent"
-                      border="1px solid"
-                      borderColor="cyan.500"
-                      borderRadius="full"
-                      color="cyan.400"
-                      fontSize="xs"
-                      fontWeight="900"
-                      letterSpacing="0.2em"
-                      textAlign="center"
-                      whiteSpace="nowrap"
-                      transition="all 0.3s"
-                      whileHover={{ 
-                        bg: "cyan.500", 
-                        color: "black",
-                        boxShadow: "0 0 20px rgba(0, 255, 255, 0.3)",
-                        scale: 1.05
-                      }}
-                      whileTap={{ scale: 0.95 }}
-                    >
-                      NEWSLETTER SIGNUP
-                    </MotionBox>
-                  </Link>
-                </Box>
+
               </VStack>
             </VStack>
           </Box>

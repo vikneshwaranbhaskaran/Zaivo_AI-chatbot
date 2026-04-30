@@ -74,7 +74,7 @@ const Verticals = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <Heading as="h1" fontSize={{ base: "4xl", md: "7xl" }} fontWeight="900" letterSpacing="-0.03em" lineHeight="1.1">
+              <Heading as="h1" fontSize={{ base: "3xl", md: "5xl", lg: "7xl" }} fontWeight="900" letterSpacing="-0.03em" lineHeight="1.1" wordBreak="break-word" overflowWrap="anywhere">
                 Where Work <br/>
                 Becomes a <Text as="span" color="cyan.400">System.</Text>
               </Heading>
