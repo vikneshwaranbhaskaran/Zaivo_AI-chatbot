@@ -4,6 +4,7 @@ import { FiTool, FiZap, FiTarget, FiUsers } from 'react-icons/fi';
 import { motion } from 'framer-motion';
 import Footer from '../Components/Footer';
 import ScrollReveal from '../Components/ScrollReveal';
+import SEO from '../Components/SEO';
 
 const MotionBox = motion(Box);
 const MotionVStack = motion(VStack);
@@ -29,6 +30,10 @@ const Foundry = () => {
 
   return (
     <Box bg="#050505" color="white" minH="100vh" overflowX="hidden">
+      <SEO 
+        title="The Foundry | Zaivo Engineering" 
+        description="Forging the digital tools of sovereignty. Zaivo is built at the intersection of local industrial wisdom and global software excellence." 
+      />
       <Container maxW="container.xl" px={4} pt={{ base: 32, md: 40 }} pb={24}>
 
         {}

@@ -15,12 +15,17 @@ import { motion } from 'framer-motion';
 import { Link as RouterLink } from 'react-router-dom';
 import Footer from '../Components/Footer';
 import ScrollReveal from '../Components/ScrollReveal';
+import SEO from '../Components/SEO';
 
 const MotionBox = motion(Box);
 
 const About = () => {
   return (
     <Box bg="#050505" color="white" minH="100vh" overflowX="hidden">
+      <SEO 
+        title="About | Zaivo" 
+        description="Systems don’t fail because of ideas. They fail because execution depends on constant effort. Zaivo focuses on motion." 
+      />
      
       <Box pt={{ base: 28, md: 36 }} pb={{ base: 12, md: 24 }} position="relative">
         <Box

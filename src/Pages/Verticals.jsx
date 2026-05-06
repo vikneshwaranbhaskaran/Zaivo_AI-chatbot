@@ -5,6 +5,7 @@ import { Link as RouterLink } from 'react-router-dom';
 import { FiActivity, FiGlobe, FiTarget, FiZap, FiLayers, FiArrowRight, FiCheckCircle } from 'react-icons/fi';
 import Footer from '../Components/Footer';
 import ScrollReveal from '../Components/ScrollReveal';
+import SEO from '../Components/SEO';
 
 const MotionBox = motion(Box);
 
@@ -54,6 +55,10 @@ const Verticals = () => {
 
   return (
     <Box bg="#050505" color="white" minH="100vh" overflowX="hidden">
+      <SEO 
+        title="Verticals | Zaivo Systems" 
+        description="Zaivo standardizes execution across multiple domains, creating predictable, scalable, and autonomous systems." 
+      />
 
       {}
       <Box pt={{ base: 32, md: 44 }} pb={{ base: 8, md: 12 }} position="relative">

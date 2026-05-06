@@ -7,10 +7,15 @@ import { FiActivity, FiCpu, FiGlobe, FiZap } from 'react-icons/fi';
 import IndustrialPulse from '../Components/IndustrialPulse';
 import Footer from '../Components/Footer';
 import ScrollReveal from '../Components/ScrollReveal';
+import SEO from '../Components/SEO';
 
 const Terminal = () => {
   return (
     <Box bg="#020202" color="white" minH="100vh" overflowX="hidden">
+      <SEO 
+        title="Live System Terminal | Zaivo" 
+        description="View live network status, system throughput, and active execution nodes in the Zaivo sovereign terminal." 
+      />
       <Container maxW="container.xl" px={4} pt={{ base: 32, md: 40 }} pb={24}>
         <VStack align="center" spacing={10} mb={20} textAlign="center">
           <HStack>

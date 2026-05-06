@@ -5,6 +5,8 @@ import {
 import { motion, AnimatePresence } from 'framer-motion';
 import { FiArrowRight, FiMail, FiPhone, FiCheck, FiChevronRight, FiArrowLeft } from 'react-icons/fi';
 import Footer from '../Components/Footer';
+import { saveContactSubmission } from '../services/db';
+import SEO from '../Components/SEO';
 
 const MotionBox = motion(Box);
 
@@ -206,10 +208,16 @@ const Contact = () => {
     if (step < STEPS.length - 1) {
       setStep(step + 1);
     } else {
+      // ── Open WhatsApp as before ───────────────────────────────────────
       const message = `*New Contact via Zaivo*\n\n*Email:* ${updated.email || 'N/A'}\n*Org:* ${updated.organization || 'N/A'}\n*Need:* ${updated.help || 'N/A'}\n*Phone:* ${updated.phone || 'N/A'}`;
       const whatsappUrl = `https://wa.me/919384100252?text=${encodeURIComponent(message)}`;
       window.open(whatsappUrl, '_blank');
       setSent(true);
+
+      // ── Persist to Firestore (non-blocking) ─────────────────────────
+      saveContactSubmission(updated).catch((err) =>
+        console.error('[Zaivo DB] Failed to save contact submission:', err)
+      );
     }
   };
 
@@ -237,6 +245,11 @@ const Contact = () => {
       overflow="hidden"
       fontFamily="'Inter', sans-serif"
     >
+      <SEO 
+        title="Contact | Zaivo" 
+        description="Let's build together. Tell us what you're building, and we'll help you make it run." 
+      />
+
       {/* Background glows */}
       <Box
         position="fixed" top="-15%" right="-5%"

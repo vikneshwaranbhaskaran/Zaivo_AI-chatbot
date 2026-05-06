@@ -1,6 +1,7 @@
 import React, { useState, Suspense, lazy } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { ChakraProvider, extendTheme, Box, Spinner, Center } from '@chakra-ui/react';
+import { HelmetProvider } from 'react-helmet-async';
 
 const Home = lazy(() => import('./Pages/Home'));
 const Verticals = lazy(() => import('./Pages/Verticals'));
@@ -33,7 +34,7 @@ function App() {
   };
 
   return (
-    <>
+    <HelmetProvider>
       {showSplash && <SplashScreen onComplete={handleSplashComplete} />}
       <CustomCursor />
       <Router>
@@ -55,7 +56,7 @@ function App() {
         </Suspense>
         <Chatbot />
       </Router>
-    </>
+    </HelmetProvider>
   );
 }
 

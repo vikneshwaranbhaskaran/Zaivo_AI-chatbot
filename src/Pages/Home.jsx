@@ -1,6 +1,7 @@
 import React from 'react';
 import { Box, Container } from '@chakra-ui/react';
 
+import SEO from '../Components/SEO';
 import Hero from '../Components/Hero';
 import ZidGenerator from '../Components/ZidGenerator';
 import GlobalTopology from '../Components/GlobalTopology';
@@ -15,6 +16,10 @@ import ScrollReveal from '../Components/ScrollReveal';
 const Home = () => {
   return (
     <Box bg="#050505" color="white" minH="100vh" overflowX="hidden">
+      <SEO 
+        title="Zaivo | Done. Before You Do." 
+        description="Zaivo turns operations into systems that run, adapt, and deliver — without constant input." 
+      />
 
       {}
       <Hero />
