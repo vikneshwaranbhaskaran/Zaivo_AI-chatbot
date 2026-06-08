@@ -132,14 +132,14 @@ const StepInput = ({ step, value, onChange, onNext, onBack, isLast }) => {
           size="md"
           h="44px"
           px={7}
-          bg={canProceed ? 'cyan.400' : 'whiteAlpha.100'}
+          bg={canProceed ? 'violet.400' : 'whiteAlpha.100'}
           color={canProceed ? 'gray.900' : 'gray.600'}
           fontWeight="700"
           fontSize="sm"
           letterSpacing="0.04em"
           borderRadius="12px"
           rightIcon={<FiArrowRight />}
-          _hover={canProceed ? { bg: 'cyan.300', transform: 'translateY(-1px)', boxShadow: '0 4px 20px rgba(0,229,255,0.25)' } : {}}
+          _hover={canProceed ? { bg: 'violet.300', transform: 'translateY(-1px)', boxShadow: '0 4px 20px rgba(0,229,255,0.25)' } : {}}
           transition="all 0.2s"
           cursor={canProceed ? 'pointer' : 'not-allowed'}
         >
@@ -158,7 +158,7 @@ const ProgressBar = ({ current, total }) => (
         h="3px"
         flex={1}
         borderRadius="full"
-        bg={i < current ? 'cyan.400' : 'whiteAlpha.100'}
+        bg={i < current ? 'violet.400' : 'whiteAlpha.100'}
         transition="all 0.4s ease"
         position="relative"
         overflow="hidden"
@@ -167,7 +167,7 @@ const ProgressBar = ({ current, total }) => (
           <Box
             position="absolute"
             inset={0}
-            bgGradient="linear(to-r, cyan.600, cyan.300)"
+            bgGradient="linear(to-r, violet.600, violet.300)"
             borderRadius="full"
           />
         )}
@@ -293,11 +293,11 @@ const Contact = () => {
               bg="rgba(0,229,255,0.05)"
               mb={8}
             >
-              <Box w="6px" h="6px" borderRadius="full" bg="cyan.400"
+              <Box w="6px" h="6px" borderRadius="full" bg="violet.400"
                 boxShadow="0 0 8px #22d3ee"
                 sx={{ animation: 'pulse 2s ease-in-out infinite' }}
               />
-              <Text fontSize="11px" fontWeight="700" letterSpacing="0.2em" color="cyan.400">
+              <Text fontSize="11px" fontWeight="700" letterSpacing="0.2em" color="violet.400">
                 OPEN TO CONNECT
               </Text>
             </Flex>
@@ -310,7 +310,7 @@ const Contact = () => {
               mb={6}
             >
               Let's build<br />
-              <Box as="span" color="cyan.400">together.</Box>
+              <Box as="span" color="violet.400">together.</Box>
             </Heading>
 
             <Text color="gray.500" fontSize="md" lineHeight="1.9" mb={10} maxW="340px">
@@ -338,7 +338,7 @@ const Contact = () => {
                     display="flex" alignItems="center" justifyContent="center"
                     flexShrink={0}
                   >
-                    <Icon as={FiMail} color="cyan.400" boxSize="14px" />
+                    <Icon as={FiMail} color="violet.400" boxSize="14px" />
                   </Box>
                   <Text fontSize="sm" color="gray.400">connect@zaivo.com</Text>
                 </HStack>
@@ -362,7 +362,7 @@ const Contact = () => {
                     display="flex" alignItems="center" justifyContent="center"
                     flexShrink={0}
                   >
-                    <Icon as={FiPhone} color="cyan.400" boxSize="14px" />
+                    <Icon as={FiPhone} color="violet.400" boxSize="14px" />
                   </Box>
                   <Text fontSize="sm" color="gray.400">+91 93841 00252</Text>
                 </HStack>
@@ -482,7 +482,7 @@ const Contact = () => {
                                   display="flex" alignItems="center" justifyContent="center"
                                   flexShrink={0} mt="1px"
                                 >
-                                  <Icon as={FiCheck} color="cyan.400" boxSize={2.5} />
+                                  <Icon as={FiCheck} color="violet.400" boxSize={2.5} />
                                 </Box>
                                 <Box>
                                   <Text fontSize="9px" letterSpacing="0.2em" color="gray.700" fontWeight="800" mb="1px">
@@ -520,7 +520,7 @@ const Contact = () => {
                         boxShadow="0 0 40px rgba(0,229,255,0.12)"
                         display="flex" alignItems="center" justifyContent="center"
                       >
-                        <Icon as={FiCheck} color="cyan.400" boxSize={8} />
+                        <Icon as={FiCheck} color="violet.400" boxSize={8} />
                       </Box>
                     </MotionBox>
 
@@ -531,7 +531,7 @@ const Contact = () => {
                       mb={4}
                     >
                       Message{' '}
-                      <Box as="span" color="cyan.400">received.</Box>
+                      <Box as="span" color="violet.400">received.</Box>
                     </Heading>
                     <Text color="gray.600" fontSize="md" maxW="320px" lineHeight="1.8" mx="auto" mb={10}>
                       We'll get back to you within 24 hours. We're excited to hear what you're building.
@@ -545,7 +545,7 @@ const Contact = () => {
                       fontSize="sm"
                       letterSpacing="0.08em"
                       rightIcon={<FiChevronRight />}
-                      _hover={{ color: 'cyan.400' }}
+                      _hover={{ color: 'violet.400' }}
                       transition="all 0.2s"
                     >
                       Explore Verticals

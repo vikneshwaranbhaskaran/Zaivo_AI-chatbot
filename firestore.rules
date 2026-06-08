@@ -1,0 +1,57 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    // Admins have full read/write to everything
+    function isAdmin() {
+      return request.auth != null && exists(/databases/$(database)/documents/adminRoles/$(request.auth.token.email));
+    }
+    
+    // Check if the user is an active approved customer
+    function isApprovedCustomer() {
+      return request.auth != null && 
+        exists(/databases/$(database)/documents/approvedUsers/$(request.auth.token.email)) && 
+        get(/databases/$(database)/documents/approvedUsers/$(request.auth.token.email)).data.status == 'active';
+    }
+
+    match /adminRoles/{email} {
+      allow read: if request.auth != null && request.auth.token.email == email;
+      allow read, write: if false; // Only manageable directly via Firebase Console
+    }
+    
+    match /approvedUsers/{email} {
+      allow read: if request.auth != null && request.auth.token.email == email;
+      allow read, write: if isAdmin();
+    }
+    
+    match /videos/{videoId} {
+      allow read: if isAdmin() || (isApprovedCustomer() && resource.data.visibility == 'public');
+      allow write: if isAdmin();
+    }
+    
+    match /documents/{docId} {
+      allow read: if isAdmin() || (isApprovedCustomer() && resource.data.visibility == 'public');
+      allow write: if isAdmin();
+    }
+
+    match /chatbot_leads/{leadId} {
+      allow create: if true; // Allow anyone to submit a lead
+      allow read, write: if isAdmin();
+    }
+
+    match /contact_submissions/{subId} {
+      allow create: if true; // Allow anyone to submit
+      allow read, write: if isAdmin();
+    }
+
+    match /chat_conversations/{chatId} {
+      allow create: if true; // Allow bot chats to be logged
+      allow read, write: if isAdmin();
+    }
+    
+    // Default deny
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}
